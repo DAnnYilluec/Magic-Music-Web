@@ -11,7 +11,7 @@
                 </div>
                 <div class="text-center py-4">
                     <div class="d-flex align-items-center justify-content-center mt-2">
-                        <h2>{{$usuario->nombre_usuario}}</h2>
+                        <h2> <a href="{{route('stalker',$usuario->id)}}">{{$usuario->nombre_usuario}}</a></h2>
                         <!--<h5><a href="}</a></h5>-->
                     </div>
                 </div>

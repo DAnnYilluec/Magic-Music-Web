@@ -52,7 +52,7 @@
                                 <td>
                                     <ul class="action-list">
                                         @if($usuario->nombre_usuario != "DAnnYilluec")
-                                        <li><button href="{{route('eliminar',$usuario->id)}}" data-tip="delete"><i class="fa fa-trash"></i></button></li>
+                                        <li><a href="{{route('eliminar',$usuario->id)}}" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                                             @livewire('cambiar-admin', ['usuarioId' => $usuario->id])
                                         @endif
                                     </ul>
