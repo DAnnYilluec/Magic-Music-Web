@@ -14,7 +14,7 @@
             <div class="col-lg-7 col-md-6 col-12">
                 <div class="tm-about-img-text">
                     <p class="mb-4">
-                 {!! $artistaId->texto !!}}
+                 {!! $artistaId->texto !!}
                     </p>
                     </div>
             </div>
@@ -122,7 +122,7 @@
 
             </div>
         </div>
-
+    </div>
 
 
     <script src="/js/js-web/plugins.js"></script>

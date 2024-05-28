@@ -57,7 +57,7 @@
                                 <td>{{$music->updated_at}}</td>
                                 <td>
                                     <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="{{route('musicaEditar',$music->id)}}" data-tip="edit"><i class="fa fa-edit"></i></a></li>
                                         <li><a href="{{route('eliminarMus',$music->id)}}" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                                     </ul>
                                 </td>
@@ -125,7 +125,7 @@
                                 <td>{{$artista->updated_at}}</td>
                                 <td>
                                     <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="{{route('artistaEditar',$artista->id)}}" data-tip="edit"><i class="fa fa-edit"></i></a></li>
                                         <li><a href="{{route('eliminarArt',$artista->id)}}" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                                     </ul>
                                 </td>

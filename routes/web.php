@@ -26,6 +26,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/eliminarArt/{id}', [AdminController::class, 'destroyArtad'])->name('eliminarArt')->middleware(AdminMiddleware::class);
     Route::get('web/publicacionEditar/{id}', [MostrarController::class, 'muestraEditarPublicacion'])->name('publicacionEditar')->middleware(AdminMiddleware::class);
     Route::put('web/publicacionEditar/{id}', [CambiarController::class, 'editarPublicacion'])->name('editarPublicacion')->middleware(AdminMiddleware::class);
+    Route::get('web/discusionEditar/{id}', [MostrarController::class, 'muestraEditarDiscusion'])->name('discusionEditar')->middleware(AdminMiddleware::class);
+    Route::put('web/discusionEditar/{id}', [CambiarController::class, 'editarDiscusion'])->name('editarDiscusion')->middleware(AdminMiddleware::class);
+    Route::get('web/musicaEditar/{id}', [MostrarController::class, 'muestraEditarMusica'])->name('musicaEditar')->middleware(AdminMiddleware::class);
+    Route::put('web/musicaEditar/{id}', [CambiarController::class, 'editarMusica'])->name('editarMusica')->middleware(AdminMiddleware::class);
+    Route::get('web/editarArtista/{id}', [MostrarController::class, 'muestraEditarArtista'])->name('artistaEditar')->middleware(AdminMiddleware::class);
+    Route::put('web/editarArtista/{id}', [CambiarController::class, 'editarArtista'])->name('editarArtista')->middleware(AdminMiddleware::class);
     Route::get('web/registrarUsuario', [MostrarController::class, 'mostrarRegistrarUsuarioAd'])->name('pagCrearUsuarioAd')->middleware(AdminMiddleware::class);
     Route::post('web/registrarUsuario', [RegistroController::class, 'crearRegistrarUsuarioAd'])->name('crearUsuarioAd')->middleware(AdminMiddleware::class);
     Route::post('/cambiar/{id}', [AdminController::class, 'cambiarAdmin'])->name('cambiarAdmin');
@@ -37,7 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('web/cambiarContraseña/{id}', [MostrarController::class, 'muestraCambiarContraseña'])->name('mostrarCambiarContraseña');
     Route::post('web/cambiarContraseña', [CambiarController::class, 'cambiarContraseña'])->name('cambiarContraseña');
-
+    Route::get('web/stalker/{id}',[MostrarController::class,'stalker'])->name('stalker');
 
 //Busqueda
     Route::get('web/paginaDeBusqueda', [InicioController::class, 'busqueda'])->name('busqueda');

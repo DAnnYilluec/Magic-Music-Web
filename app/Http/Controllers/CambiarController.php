@@ -70,7 +70,7 @@ class CambiarController extends Controller
             $ruta = $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
             $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
         } else {
-            $nombreImagenDePortada  = $id->imagen;
+            $nombreImagenDePortada  = $id->imagenDePortada;
         }
 
         $id->nombre = $request->nombre;
@@ -84,6 +84,104 @@ class CambiarController extends Controller
 
         $id->save();
         return redirect()->route('panelAdminPublic');
+    }
+
+    public function editarDiscusion(Request $request, Discusiones $id){
+        $request->validate([
+            'titulo' => 'required|string|max:255',
+            'texto' => 'required|string',
+            'imagen' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'imagenDePortada' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $nombreImagen = time() . '_' . $imagen->getClientOriginalName();
+            $ruta = $imagen->storeAs('images', $nombreImagen, 'public');
+            $imagen->storeAs('images', $nombreImagen, 'public');
+        } else {
+            $nombreImagen = $id->imagenDePortada;
+        }
+
+        if ($request->hasFile('imagenDePortada')) {
+            $imagenDePortada = $request->file('imagenDePortada');
+            $nombreImagenDePortada = time() . '_' . $imagenDePortada->getClientOriginalName();
+            $ruta = $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
+            $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
+        } else {
+            $nombreImagenDePortada = $id->imagen;
+        }
+        $id->titulo = $request->titulo;
+        $id->texto = $request->texto;
+        $id->imagen=$nombreImagen;
+        $id->imagenDePortada=$nombreImagenDePortada;
+        $id->id_usuario= Auth::id();
+
+        $id->save();
+
+
+        return redirect()->route('panelAdminDiscu');
+    }
+
+    public function editarMusica(Request $request, Musica $id){
+
+        $request->validate([
+            'nombreCan' => 'required|string|max:255',
+            'link'=>'required',
+            'id_artistaCan'=> 'required',
+            'tipo'=>'required',
+            'textoCan'=>'required'
+        ]);
+
+
+                $id->nombreCan = $request->nombreCan;
+                $id->link = $request->link;
+                $id->id_artistaCan = $request->id_artistaCan;
+                $id->tipo = $request->tipo;
+                $id->textoCan= $request->textoCan;
+                $id->id_publicacion = $id->id_publicacion;
+
+
+        $id->save();
+
+
+        return redirect()->route('panelAdminMusica');
+    }
+    public function editarArtista(Request $request,Artistas $id){
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'texto' => 'required|string',
+            'imagen' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'imagenDePortada' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $nombreImagen = time() . '_' . $imagen->getClientOriginalName();
+            $ruta = $imagen->storeAs('images', $nombreImagen, 'public');
+            $imagen->storeAs('images', $nombreImagen, 'public');
+        } else {
+            $nombreImagen = $id->imagen;
+        }
+
+        if ($request->hasFile('imagenDePortada')) {
+            $imagenDePortada = $request->file('imagenDePortada');
+            $nombreImagenDePortada = time() . '_' . $imagenDePortada->getClientOriginalName();
+            $ruta = $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
+            $imagenDePortada->storeAs('images', $nombreImagenDePortada, 'public');
+        } else {
+            $nombreImagenDePortada = $id->imagenDePortada;
+        }
+
+        $id->nombre = $request->nombre;
+        $id->texto = $request->texto;
+        $id->imagen=$nombreImagen;
+        $id->imagenDePortada=$nombreImagenDePortada;
+
+        $id->save();
+
+
+        return redirect()->route('pagArtista',$id->id);
     }
 
     public function cambiarContraseña(Request $request)

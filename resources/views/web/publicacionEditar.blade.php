@@ -6,7 +6,7 @@
     <!--APARTADO DE LA IMAGEN-->
 
     <div class="container-fluid tm-container-content tm-mt-60">
-    <h2>Crear Publicacion</h2>
+    <h2>Editar Publicacion</h2>
     <form action="{{route('publicacionEditar', $id)}}" method="post" enctype="multipart/form-data">
       @csrf
         @method('put')

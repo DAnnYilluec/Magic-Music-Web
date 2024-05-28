@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artistas;
+use App\Models\Comentario;
 use App\Models\Discusiones;
 use App\Models\Musica;
 use App\Models\Publicacion;
@@ -84,12 +85,26 @@ class MostrarController extends Controller
         $artistas = Artistas::all();
         return view('web.publicacionEditar',compact('id','comprobar','artistas'));
     }
-
-
-    public function stalker(Usuario $id, Receta $recetas){
+    public function muestraEditarDiscusion(Discusiones $id ){
         $comprobar = Auth::user();
-        $recetas = Receta::where('id_usuario', $id->id)->orderBy('id', 'desc')->paginate();
-        return view('stalker',compact('id','comprobar','recetas'));
+        return view('web.discusionEditar',compact('id','comprobar'));
+    }
+    public function muestraEditarMusica(Musica $id ){
+        $comprobar = Auth::user();
+        $artistas = Artistas::all();
+        $publicaciones=Publicacion::all();
+        return view('web.musicaEditar',compact('id','comprobar','artistas','publicaciones'));
+    }
+    public function muestraEditarArtista(Artistas $id ){
+        $comprobar = Auth::user();
+        return view('web.editarArtista',compact('id','comprobar'));
+    }
+
+    public function stalker(Usuario $id){
+        $comprobar = Auth::user();
+        $discusiones = Discusiones::where('id_usuario', $id->id)->orderBy('id', 'desc')->paginate();
+        $numeroDeDiscusiones = Discusiones::where('id_usuario', $id->id)->count();
+        return view('web.stalker',compact('id','comprobar','discusiones','numeroDeDiscusiones'));
     }
 }
 

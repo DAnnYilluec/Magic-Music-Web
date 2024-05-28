@@ -67,7 +67,7 @@
                         </figure>
                         <div class="d-flex justify-content-between tm-text-gray">
                             <span class="tm-text-gray-light">{{$discusion->created_at->format('d-m-Y')}}</span>
-                            <span>{{$discusion->usuario->nombre}}</span>
+                            <span><a href="{{route('stalker',$discusion->id_usuario)}}">{{$discusion->usuario->nombre}}</a></span>
                         </div>
                     </div>
                 @endforeach

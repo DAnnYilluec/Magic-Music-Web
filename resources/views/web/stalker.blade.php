@@ -76,11 +76,6 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <a class="btn btn-info " target="__blank" href="{{route('miPerfilEditar',['id' => Auth::id()])}}">Editar</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -91,9 +86,6 @@
 
     </div>
 
-    <a class="btn btn-primary tm-btn-big" href="{{route('logout')}}">Cerrar Sesion</a>
-    <a class="btn btn-primary tm-btn-big" href="{{route('mostrarCambiarContraseña',['id' => Auth::id()])}}">Cambiar Contraseña</a>
-    <a class="btn btn-primary tm-btn-big" href="{{route('eliminame',$id->id)}}">Eliminar Cuenta</a>
         <!--Mis discusiones-->
     <div class="container-fluid tm-container-content tm-mt-60">
             <div class="row mb-4">

@@ -50,8 +50,8 @@
                                 <td>{{ $discusion->created_at }}</td>
                                 <td>
                                     <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="{{route('discusionEditar',$discusion->id)}}" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="{{route('eliminarDis',$discusion->id)}}" data-tip="delete"><i class="fa fa-trash"></i></a></li>
                                     </ul>
                                 </td>
                             </tr>

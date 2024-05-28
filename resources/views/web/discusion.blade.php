@@ -48,7 +48,7 @@
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
                         <span class="tm-text-gray-light">{{$pub->created_at->format('d-m-Y')}}</span>
-                        <span>{{$pub->usuario->nombre}}</span>
+                        <span><a href="{{route('stalker',$pub->id_usuario)}}">{{$pub->usuario->nombre}}</a></span>
                     </div>
                 </div>
             @endforeach
@@ -71,7 +71,7 @@
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
                         <span class="tm-text-gray-light">{{$pubs->created_at->format('d-m-Y')}}</span>
-                        <span>{{$pubs->usuario->nombre}}</span>
+                        <span><a href="{{route('stalker',$pubs->id_usuario)}}">{{$pubs->usuario->nombre}}</a></span>
                     </div>
                 </div>
             @endforeach

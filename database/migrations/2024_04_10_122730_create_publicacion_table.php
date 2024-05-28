@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->enum('valoracion',['1','1.5','2','2.5','3','3.5','4','4.5','5']);
             $table->text('texto')->nullable();
+            $table->text('color')->nullable();
             $table->foreignId('id_artista')->constrained('artistas');
             $table->string('imagenDePortada')->nullable();
             $table->string('imagen')->nullable();
