@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <h3 class="tm-text-gray-dark mb-3">Descripcion</h3>
-                              <textarea placeholder="Descripcion" class="w-100 h-75" type="text" name="textoCan[]"></textarea>
+                              <textarea placeholder="Descripcion" class="w-100" type="text" name="textoCan[]"></textarea>
                         </div>
                 <div class="col-md-6 mb-4">
                   <h3 class="tm-text-gray-dark mb-3">Tipo</h3>
