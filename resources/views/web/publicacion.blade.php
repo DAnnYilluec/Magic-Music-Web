@@ -55,7 +55,7 @@
             <!-- Div para la letra de la canción -->
             <div class="col-md-6">
                 <div class="collapse w-100 mb-5" id="collapseLetra{{$loop->index}}">
-                    <div class="resultado"></div>
+                    <div class="resultado" style="background-color:{{$publicacionId->color}}"></div>
                 </div>
             </div>
         </div>
