@@ -1,6 +1,7 @@
 
   .resultado {
     white-space: pre-wrap;
+    color:white;
     padding: 2rem;
     font-weight: bold;
     font-size: 20px;
