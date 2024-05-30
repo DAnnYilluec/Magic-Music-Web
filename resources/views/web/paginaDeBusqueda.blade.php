@@ -59,7 +59,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
-                    <div style="background: url('{{ asset($publicacion->imagen ? 'storage/images/'.$publicacion->imagen : '/img/img-web/Abbey Road - The Beatles.png') }}') no-repeat center center; background-size: cover; height: 200px;"></div>
+                    <div style="background: url('{{ asset($artista->imagen ? 'storage/images/'.$artista->imagen : '/img/img-web/Abbey Road - The Beatles.png') }}') no-repeat center center; background-size: cover; height: 200px;"></div>
                 </div>
                 <div class="text-center py-4">
                     <div class="d-flex align-items-center justify-content-center mt-2">
