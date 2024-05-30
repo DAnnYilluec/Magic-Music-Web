@@ -169,12 +169,6 @@ class AdminController extends Controller
             foreach ($user->comentarios as $comentario) {
                 $comentario->delete();
             }
-            foreach ($user->discusion as $discusiones) {
-                foreach ($discusiones->comentarios as $comentario) {
-                    $comentario->delete();
-                }
-                $discusiones->delete();
-            }
             $user->delete();
 
             return redirect()->route('panelAdminDiscu')->with('success', 'Usuario eliminado con éxito');
