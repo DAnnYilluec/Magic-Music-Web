@@ -163,7 +163,7 @@ class AdminController extends Controller
 
     public function destroyDisad($id)
     {
-        $user = Usuario::find($id);
+        $user = Discusiones::find($id);
 
         if ($user) {
             foreach ($user->comentarios as $comentario) {
@@ -174,9 +174,6 @@ class AdminController extends Controller
                     $comentario->delete();
                 }
                 $discusiones->delete();
-            }
-            foreach ($user->publicacion as $publicacion) {
-                $publicacion->delete();
             }
             $user->delete();
 
