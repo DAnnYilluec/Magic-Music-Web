@@ -32,7 +32,7 @@
                             <h3 class="tm-text-gray-dark mb-3">Publicacion</h3>
                             <select name="id_publicacion" class="w-100">
                                 @foreach ($publicaciones as $publicacion)
-                                    <option value="{{$publicacion->id }}">{{ $publicacion->nombre== $id->id_publicacion ? 'selected' : '' }}>{{ $publicacion->nombre}}</option>
+                                    <option value="{{$publicacion->id }}"{{ $publicacion->nombre== $id->id_publicacion ? 'selected' : '' }}>{{ $publicacion->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
