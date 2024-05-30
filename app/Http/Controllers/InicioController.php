@@ -59,21 +59,21 @@ class InicioController extends Controller
 
     public function muestraPagArtistas()
     {
-        $artistas = Artistas::orderBy('id', 'desc')->paginate(8);
+        $artistas = Artistas::orderBy('id', 'desc')->paginate(12);
         $comprobar = Auth::user();
         return view('web/artistas',compact('comprobar','artistas'));
 
     }
     public function muestraPagDiscusiones()
     {
-        $discusiones = Discusiones::orderBy('id', 'desc')->paginate(8);
+        $discusiones = Discusiones::orderBy('id', 'desc')->paginate(12);
         $comprobar = Auth::user();
         return view('web/discusiones',compact('comprobar','discusiones'));
 
     }
     public function muestraPagPublicaciones()
     {
-        $publicaciones = Publicacion::orderBy('id', 'desc')->paginate(8);
+        $publicaciones = Publicacion::orderBy('id', 'desc')->paginate(12);
         $comprobar = Auth::user();
         return view('web/publicaciones',compact('comprobar','publicaciones'));
 
