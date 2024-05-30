@@ -20,17 +20,17 @@ class AdminController extends Controller
     }
     public function mostrarUsuariosAdmin(){
         $comprobar = Auth::user();
-        $usuarios = Usuario::orderBy('id', 'asc')->paginate(8);
+        $usuarios = Usuario::orderBy('id', 'asc')->paginate(12);
         return view('web.administradorUsuarios',compact('comprobar','usuarios'));
     }
     public function mostrarPublicAdmin(){
         $comprobar = Auth::user();
-        $publicaciones= Publicacion::orderBy('id', 'asc')->paginate(8);
+        $publicaciones= Publicacion::orderBy('id', 'asc')->paginate(12);
         return view('web.administradorPub',compact('comprobar','publicaciones'));
     }
     public function mostrarDiscusionesAdmin(){
         $comprobar = Auth::user();
-        $discusiones = Discusiones::orderBy('id', 'asc')->paginate(8);
+        $discusiones = Discusiones::orderBy('id', 'asc')->paginate(12);
         return view('web.administradorDis',compact('comprobar','discusiones'));
     }
     public function mostrarMusicaAdmin(){
