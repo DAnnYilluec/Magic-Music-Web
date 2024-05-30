@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 tm-mt-60">
-        <textarea name="texto" type="text" placeholder="Descripcion" class="w-100 h-75">{{$id->texto}}</textarea>
+        <textarea name="texto" type="text" placeholder="Descripcion" class="w-100 h-100">{{$id->texto}}</textarea>
       </div>
         <div class="row">
             <div class="col-md-6 mb-4">
