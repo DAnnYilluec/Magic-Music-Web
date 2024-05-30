@@ -35,8 +35,8 @@ class AdminController extends Controller
     }
     public function mostrarMusicaAdmin(){
         $comprobar = Auth::user();
-        $musica = Musica::orderBy('id', 'asc')->paginate(8);
-        $artistas = Artistas::orderBy('id', 'asc')->paginate(8);
+        $musica = Musica::orderBy('id', 'asc')->paginate(12);
+        $artistas = Artistas::orderBy('id', 'asc')->paginate(12);
         return view('web.administradorMusica',compact('comprobar','musica','artistas'));
     }
     public function busquedaUsu(Request $request)
