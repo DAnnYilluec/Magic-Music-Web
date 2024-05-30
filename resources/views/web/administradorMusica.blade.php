@@ -39,7 +39,7 @@
                                 <th>Id artista</th>
                                 <th>Nombre Artista</th>
                                 <th>Género</th>
-                                <th>Fecha Creacion</th>
+                                <th>id_publicacion</th>
                                 <th>Fecha Editado</th>
                                 <th>.</th>
                             </tr>
@@ -53,7 +53,7 @@
                                 <td>{{$music->id_artistaCan}}</td>
                                 <td>{{$music->artistas->nombre}}</td>
                                 <td>{{$music->tipo}}</td>
-                                <td>{{$music->created_at}}</td>
+                                <td>{{$music->id_publicacion}}</td>
                                 <td>{{$music->updated_at}}</td>
                                 <td>
                                     <ul class="action-list">
