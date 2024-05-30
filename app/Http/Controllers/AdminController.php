@@ -180,9 +180,9 @@ class AdminController extends Controller
             }
             $user->delete();
 
-            return redirect()->route('panelAdminUsu')->with('success', 'Usuario eliminado con éxito');
+            return redirect()->route('panelAdminDiscu')->with('success', 'Usuario eliminado con éxito');
         } else {
-            return redirect()->route('panelAdminUsu')->with('error', 'Usuario no encontrado');
+            return redirect()->route('panelAdminDiscu')->with('error', 'Usuario no encontrado');
         }
     }
 
