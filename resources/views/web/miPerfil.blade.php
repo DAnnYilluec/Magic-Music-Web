@@ -92,7 +92,6 @@
     </div>
 
     <a class="btn btn-primary tm-btn-big" href="{{route('logout')}}">Cerrar Sesion</a>
-    <a class="btn btn-primary tm-btn-big" href="{{route('mostrarCambiarContraseña',['id' => Auth::id()])}}">Cambiar Contraseña</a>
     <a class="btn btn-primary tm-btn-big" href="{{route('eliminame',$id->id)}}">Eliminar Cuenta</a>
         <!--Mis discusiones-->
     <div class="container-fluid tm-container-content tm-mt-60">
